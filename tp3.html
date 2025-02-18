@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>TP JavaScript</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .container { margin-bottom: 20px; }
+        input { margin: 5px; padding: 5px; }
+        button { padding: 5px 10px; cursor: pointer; }
+        pre { font-size: 16px; }
+    </style>
+</head>
+<body>
+    <h2>TP JavaScript</h2>
+
+    <!-- Exercice 1 -->
+    <div class="container">
+        <h3>1. Conversion de Températures</h3>
+        <input type="number" placeholder="Température en Fahrenheit">
+        <button>Convertir</button>
+        <p></p>
+    </div>
+
+    <!-- Exercice 2 -->
+    <div class="container">
+        <h3>2. Conversion de Durées</h3>
+        <input type="number" placeholder="Durée en secondes">
+        <button>Convertir</button>
+        <p></p>
+    </div>
+
+    <!-- Exercice 3 -->
+    <div class="container">
+        <h3>3. Classer Trois Nombres</h3>
+        <input type="number" placeholder="1er nombre">
+        <input type="number" placeholder="2ème nombre">
+        <input type="number" placeholder="3ème nombre">
+        <button>Classer</button>
+        <p></p>
+    </div>
+
+    <!-- Exercice 4 -->
+    <div class="container">
+        <h3>4. Triangle d'Étoiles</h3>
+        <input type="number" placeholder="Taille du motif">
+        <button>Triangle (while)</button>
+        <button>Triangle (for)</button>
+        <pre></pre>
+    </div>
+
+    <!-- Exercice 4-bis -->
+    <div class="container">
+        <h3>4-bis. Pyramide</h3>
+        <input type="number" placeholder="Taille de la pyramide">
+        <button>Afficher pyramide</button>
+        <pre></pre>
+    </div>
+
+    <!-- Exercice 5 -->
+    <div class="container">
+        <h3>5. Nombre Premier</h3>
+        <input type="number" placeholder="Entrer un nombre">
+        <button>Tester</button>
+        <p></p>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let sections = document.body.children;
+
+            // Exercice 1 : Conversion de températures
+            sections[1].children[2].onclick = function() {
+                let tempF = parseFloat(sections[1].children[1].value);
+                let tempC = (5 / 9) * (tempF - 32);
+                sections[1].children[3].innerText = `Cette température équivaut à ${tempC.toFixed(1)}°C`;
+            };
+
+            // Exercice 2 : Conversion de durées
+            sections[2].children[2].onclick = function() {
+                let sec = parseInt(sections[2].children[1].value);
+                let jours = Math.floor(sec / 86400);
+                sec %= 86400;
+                let heures = Math.floor(sec / 3600);
+                sec %= 3600;
+                let minutes = Math.floor(sec / 60);
+                sec %= 60;
+
+                let result = [];
+                if (jours) result.push(`${jours} jour(s)`);
+                if (heures) result.push(`${heures} heure(s)`);
+                if (minutes) result.push(`${minutes} minute(s)`);
+                if (sec) result.push(`${sec} seconde(s)`);
+
+                sections[2].children[3].innerText = `Cette durée équivaut à: ${result.join(' ')}`;
+            };
+
+            // Exercice 3 : Classer 3 nombres
+            sections[3].children[4].onclick = function() {
+                let nums = [
+                    parseFloat(sections[3].children[1].value),
+                    parseFloat(sections[3].children[2].value),
+                    parseFloat(sections[3].children[3].value)
+                ];
+
+                for (let i = 0; i < nums.length - 1; i++) {
+                    for (let j = i + 1; j < nums.length; j++) {
+                        if (nums[i] > nums[j]) {
+                            let temp = nums[i];
+                            nums[i] = nums[j];
+                            nums[j] = temp;
+                        }
+                    }
+                }
+
+                sections[3].children[5].innerText = `Ordre croissant: ${nums.join(' ')}`;
+            };
+
+            // Exercice 4 : Affichage de motifs
+            sections[4].children[2].onclick = function() {
+                let taille = parseInt(sections[4].children[1].value);
+                let result = '';
+                let i = 1;
+                while (i <= taille) {
+                    let j = 1;
+                    while (j <= i) {
+                        result += '*';
+                        j++;
+                    }
+                    result += '\n';
+                    i++;
+                }
+                sections[4].children[4].innerText = result;
+            };
+
+            sections[4].children[3].onclick = function() {
+                let taille = parseInt(sections[4].children[1].value);
+                let result = '';
+                for (let i = 1; i <= taille; i++) {
+                    for (let j = 1; j <= i; j++) {
+                        result += '*';
+                    }
+                    result += '\n';
+                }
+                sections[4].children[4].innerText = result;
+            };
+
+            // Exercice 4-bis : Pyramide
+            sections[5].children[2].onclick = function() {
+                let taille = parseInt(sections[5].children[1].value);
+                let result = '';
+                for (let i = 0; i < taille; i++) {
+                    let espace = '';
+                    let etoiles = '';
+
+                    let j = 0;
+                    while (j < taille - i - 1) {
+                        espace += ' ';
+                        j++;
+                    }
+
+                    j = 0;
+                    while (j < 2 * i + 1) {
+                        etoiles += '*';
+                        j++;
+                    }
+
+                    result += espace + etoiles + '\n';
+                }
+                sections[5].children[3].innerText = result;
+            };
+
+            // Exercice 5 : Nombre premier
+            sections[6].children[2].onclick = function() {
+                let nombre = parseInt(sections[6].children[1].value);
+                if (nombre <= 1) {
+                    sections[6].children[3].innerText = `${nombre} n'est pas un nombre premier`;
+                    return;
+                }
+
+                let estPremier = true;
+                let diviseur = 0;
+
+                let i = 2;
+                while (i <= Math.sqrt(nombre)) {
+                    if (nombre % i === 0) {
+                        estPremier = false;
+                        diviseur = i;
+                        break;
+                    }
+                    i++;
+                }
+
+                sections[6].children[3].innerText = estPremier
+                    ? `${nombre} est un nombre premier`
+                    : `${nombre} n'est pas un nombre premier, divisible par ${diviseur}`;
+            };
+        });
+    </script>
+</body>
+</html>
