@@ -63,7 +63,7 @@ Vérifier si un nombre donné est un nombre premier.
 2. Cliquer sur **Tester**.
 3. Le programme vérifie si le nombre est premier et affiche le résultat.
 
- [TP1](https://github.com/malakzaidi/Tps_POO_SDIA1/tree/main/TP1/src)
+ [TP1](https://github.com/malakzaidi/web-technologies-tps/blob/main/screenshots/image.png)
  
 ## Conclusion
 Ce projet met en pratique des concepts fondamentaux de JavaScript à travers des exercices interactifs. Vous pouvez tester et modifier le code pour mieux comprendre son fonctionnement.
