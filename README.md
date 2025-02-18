@@ -35,11 +35,6 @@ Saisir trois nombres et les afficher en ordre croissant.
 2. Cliquer sur **Classer**.
 3. Le programme trie et affiche les nombres en ordre croissant.
 
-### Capture d'écran
-_(Insérez ici une capture d'écran du résultat)_
-
----
-
 ## 4. Triangle d'Étoiles
 ### Objectif
 Générer un motif en forme de triangle en utilisant des boucles **while** et **for**.
