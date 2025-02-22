@@ -117,7 +117,7 @@ This program sorts three numbers entered by the user in ascending order.
 
 ---
 
-## 4. Star Triangle
+## Star Triangle
 ### Objective
 Generate a star pattern in the shape of a triangle using **while** and **for** loops.
 
@@ -170,55 +170,9 @@ alert(result); // Displays the pyramid
 ```
 
 ### Result
-Insert a screenshot here showing a star pyramid.
 ![image_alt](https://github.com/malakzaidi/web-technologies-tps/blob/main/screenshots/Screenshot%202025-02-22%20181832.png)
 
-## Fibonacci Sequence
-
-### Description:
-This program calculates the Fibonacci sequence and displays either the nth term or the first Fibonacci number greater than a given limit.
-
-### Finding the nth Fibonacci Term:
-1. **Retrieve the input**: The nth term of the Fibonacci sequence is retrieved.
-    ```javascript
-    let n = parseInt(sections[7].children[1].value);
-    ```
-2. **Calculate the nth term**: The Fibonacci sequence is calculated using two variables `a` and `b`, which store the previous two terms.
-    ```javascript
-    for (let i = 2; i <= n; i++) {
-        c = a + b;
-        a = b;
-        b = c;
-    }
-    ```
-3. **Display the result**: The nth term is displayed in an alert.
-    ```javascript
-    alert(`Le terme de rang ${n} est ${b}`);
-    ```
-
-### Finding the First Fibonacci Term Greater Than a Limit:
-1. **Retrieve the input**: The limit is retrieved from the input field.
-    ```javascript
-    let limite = parseInt(sections[7].children[3].value);
-    ```
-2. **Calculate the first term greater than the limit**: A while loop checks each Fibonacci number until one greater than the limit is found.
-    ```javascript
-    while (b <= limite) {
-        c = a + b;
-        a = b;
-        b = c;
-        rang++;
-    }
-    ```
-3. **Display the result**: The first Fibonacci number greater than the limit is displayed along with its rank.
-    ```javascript
-    alert(`Le premier terme supérieur à ${limite} est ${b} (rang ${rang})`);
-    ```
-
-### Screenshot:
-![Fibonacci Sequence Screenshot](https://github.com/malakzaidi/web-technologies-tps/blob/main/screenshots/Screenshot%202025-02-22%20193032.png)
-
-## 5. Prime Number Check
+## Prime Number Check
 ### Objective
 Check if a given number is a prime number.
 
@@ -243,9 +197,55 @@ alert(isPrime ? `${number} is a prime number` : `${number} is not a prime number
 ```
 
 ### Result
-Insert a screenshot here showing the verification of a prime number.
 ![image_alt](https://github.com/malakzaidi/web-technologies-tps/blob/main/screenshots/Screenshot%202025-02-22%20181851.png)
 
+
+## Fibonacci Sequence
+
+### Description:
+This program calculates the Fibonacci sequence and displays either the nth term or the first Fibonacci number greater than a given limit.
+
+### Finding the nth Fibonacci Term:
+1. **Retrieve the input**: The nth term of the Fibonacci sequence is retrieved.
+    ```javascript
+    let n = parseInt(sections[7].children[1].value);
+    ```
+2. **Calculate the nth term**: The Fibonacci sequence is calculated using two variables `a` and `b`, which store the previous two terms.
+    ```javascript
+    for (let i = 2; i <= n; i++) {
+        c = a + b;
+        a = b;
+        b = c;
+    }
+    ```
+3. **Display the result**: The nth term is displayed in an alert.
+    ```javascript
+    alert(`Le terme de rang ${n} est ${b}`);
+    ```
+### Screenshot:
+![Fibonacci Sequence Screenshot](https://github.com/malakzaidi/web-technologies-tps/blob/main/screenshots/Screenshot%202025-02-22%20192937.png)
+
+### Finding the First Fibonacci Term Greater Than a Limit:
+1. **Retrieve the input**: The limit is retrieved from the input field.
+    ```javascript
+    let limite = parseInt(sections[7].children[3].value);
+    ```
+2. **Calculate the first term greater than the limit**: A while loop checks each Fibonacci number until one greater than the limit is found.
+    ```javascript
+    while (b <= limite) {
+        c = a + b;
+        a = b;
+        b = c;
+        rang++;
+    }
+    ```
+3. **Display the result**: The first Fibonacci number greater than the limit is displayed along with its rank.
+    ```javascript
+    alert(`Le premier terme supérieur à ${limite} est ${b} (rang ${rang})`);
+    ```
+
+### Screenshot:
+![Finding the First Fibonacci Term Greater Than a Limit](https://github.com/malakzaidi/web-technologies-tps/blob/main/screenshots/Screenshot%202025-02-22%20193001.png)
 
 ## Square Root Approximation
 
