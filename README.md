@@ -28,7 +28,7 @@ alert(`This temperature is equivalent to ${tempC.toFixed(1)}°C`); // Displays t
 
 ### Result
 Insert a screenshot here showing the conversion of a temperature from Fahrenheit to Celsius.
-![image_alt](https://github.com/malakzaidi/web-technologies-tps/blob/main/screenshots/Screenshot%202025-02-22%20181532.png)
+![image_alt](https://github.com/malakzaidi/web-technologies-tps/blob/main/screenshots/Screenshot%202025-02-22%20181655.png)
 
 ---
 
@@ -64,7 +64,7 @@ alert(`This duration is equivalent to: ${result.join(' ')}`); // Displays the re
 
 ### Result
 Insert a screenshot here showing the conversion of a duration in seconds.
-![image_alt](https://github.com/malakzaidi/web-technologies-tps/blob/main/screenshots/Screenshot%202025-02-22%20181532.png)
+![image_alt](https://github.com/malakzaidi/web-technologies-tps/blob/main/screenshots/Screenshot%202025-02-22%20181716.png)
 
 ---
 
@@ -102,7 +102,7 @@ alert(`Ascending order: ${nums.join(' ')}`); // Displays the sorted numbers
 
 ### Result
 Insert a screenshot here showing three numbers sorted in ascending order.
-![image_alt](https://github.com/malakzaidi/web-technologies-tps/blob/main/screenshots/Screenshot%202025-02-22%20181532.png)
+![image_alt](https://github.com/malakzaidi/web-technologies-tps/blob/main/screenshots/Screenshot%202025-02-22%20181751.png)
 
 ---
 
@@ -131,7 +131,7 @@ alert(result); // Displays the triangle
 
 ### Result
 Insert a screenshot here showing a generated star triangle.
-![image_alt](https://github.com/malakzaidi/web-technologies-tps/blob/main/screenshots/Screenshot%202025-02-22%20181532.png)
+![image_alt](https://github.com/malakzaidi/web-technologies-tps/blob/main/screenshots/Screenshot%202025-02-22%20181811.png)
 
 ---
 
@@ -160,7 +160,7 @@ alert(result); // Displays the pyramid
 
 ### Result
 Insert a screenshot here showing a star pyramid.
-![image_alt](https://github.com/malakzaidi/web-technologies-tps/blob/main/screenshots/Screenshot%202025-02-22%20181532.png)
+![image_alt](https://github.com/malakzaidi/web-technologies-tps/blob/main/screenshots/Screenshot%202025-02-22%20181832.png)
 
 ---
 
@@ -190,7 +190,7 @@ alert(isPrime ? `${number} is a prime number` : `${number} is not a prime number
 
 ### Result
 Insert a screenshot here showing the verification of a prime number.
- ![image_alt](https://github.com/malakzaidi/web-technologies-tps/blob/main/screenshots/Screenshot%202025-02-22%20181532.png)
+ ![image_alt](https://github.com/malakzaidi/web-technologies-tps/blob/main/screenshots/Screenshot%202025-02-22%20181851.png)
  
 ---
 
