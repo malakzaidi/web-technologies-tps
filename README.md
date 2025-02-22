@@ -19,7 +19,7 @@ Each exercise is accompanied by a detailed description, usage instructions, an e
 
 ---
 
-## 1. Temperature Conversion
+## Temperature Conversion
 ### Objective
 Convert a given temperature from Fahrenheit to Celsius using the formula:
 \[ T(\degree C) = \frac{5}{9} \times (T(\degree F) - 32) \]
@@ -43,7 +43,7 @@ alert(`This temperature is equivalent to ${tempC.toFixed(1)}°C`);
 
 ---
 
-## 2. Time Conversion
+## Time Conversion
 ### Objective
 Convert a duration expressed in seconds into days, hours, minutes, and seconds.
 
@@ -77,7 +77,7 @@ alert(`This duration is equivalent to: ${result.join(' ')}`);
 
 ---
 
-## 3. Sorting Three Numbers
+## Sorting Three Numbers
 ### Objective
 Enter three numbers and display them in ascending order.
 
@@ -108,7 +108,7 @@ alert(`Ascending order: ${nums.join(' ')}`);
 
 ---
 
-## 4. Star Triangle
+## Star Triangle
 ### Objective
 Generate a star pattern in the shape of a triangle using loops.
 
@@ -131,7 +131,7 @@ alert(result);
 
 ---
 
-## 5. Star Pyramid
+## Star Pyramid
 ### Objective
 Display a centered star pyramid.
 
@@ -153,7 +153,7 @@ alert(result);
 
 ---
 
-## 6. Prime Number Check
+## Prime Number Check
 ### Objective
 Check if a given number is a prime number.
 
