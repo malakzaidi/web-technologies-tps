@@ -34,43 +34,6 @@ The repository focuses on the following technologies:
 
 ---
 
-## Repository Structure
-The repository is organized into folders for each technology or topic. Here's an overview of the structure:
-
-```
-web-technologies-tps/
-│
-├── html-exercises/            # Exercises for HTML
-│   ├── exercise1/             # Example: Basic HTML structure
-│   ├── exercise2/             # Example: Forms and inputs
-│   └── ...
-│
-├── css-exercises/             # Exercises for CSS
-│   ├── exercise1/             # Example: Basic styling
-│   ├── exercise2/             # Example: Flexbox and Grid
-│   └── ...
-│
-├── javascript-exercises/      # Exercises for JavaScript
-│   ├── exercise1/             # Example: Variables and functions
-│   ├── exercise2/             # Example: DOM manipulation
-│   └── ...
-│
-├── bootstrap-exercises/       # Exercises for Bootstrap
-│   ├── exercise1/             # Example: Responsive layout
-│   ├── exercise2/             # Example: Bootstrap components
-│   └── ...
-│
-├── projects/                  # Complete projects combining multiple technologies
-│   ├── project1/              # Example: Personal portfolio
-│   ├── project2/              # Example: E-commerce landing page
-│   └── ...
-│
-├── README.md                  # This file
-└── .gitignore                 # Files and folders to ignore in Git
-```
-
----
-
 ## How to Use This Repository
 1. **Clone the Repository**:
    ```bash
@@ -141,7 +104,7 @@ This repository is licensed under the **MIT License**. Feel free to use, modify,
 
 ## Contact
 If you have any questions or suggestions, feel free to reach out:
-- **Email**: [your-email@example.com](mailto:your-email@example.com)
+- **Email**: [malakzaidi815@example.com](mailto:your-email@example.com)
 - **GitHub**: [malakzaidi](https://github.com/malakzaidi)
 
 Happy coding! 🚀
