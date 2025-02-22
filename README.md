@@ -1,86 +1,82 @@
-Here’s a modified version of your `README.md` file that includes detailed explanations of the code and leaves space for screenshots to showcase the results. This version is structured to provide a clear understanding of each exercise while maintaining a professional and organized format.
-
----
-
-# TP JavaScript : Exercices et Solutions
+# JavaScript Exercises and Solutions
 
 ## Introduction
-Ce projet propose plusieurs exercices en JavaScript permettant d'explorer diverses fonctionnalités du langage, notamment les manipulations de nombres, les boucles, les conditions et l'affichage dynamique sur une page web.
+This project offers several JavaScript exercises designed to explore various features of the language, including number manipulations, loops, conditions, and dynamic display on a web page.
 
-Chaque exercice est accompagné d'une description détaillée, du mode d'utilisation, d'une explication du code et d'un espace pour insérer des captures d'écran illustrant les résultats obtenus.
+Each exercise is accompanied by a detailed description, usage instructions, an explanation of the code, and space to include screenshots showcasing the results.
 
 ---
 
-## 1. Conversion de Températures
-### Objectif
-Convertir une température donnée en Fahrenheit vers Celsius en utilisant la formule :
+## 1. Temperature Conversion
+### Objective
+Convert a given temperature from Fahrenheit to Celsius using the formula:
 \[ T(\degree C) = \frac{5}{9} \times (T(\degree F) - 32) \]
 
-### Mode d'utilisation
-1. Saisir une valeur en Fahrenheit dans le champ de saisie.
-2. Cliquer sur le bouton **Convertir**.
-3. La conversion en degrés Celsius s'affiche en dessous.
+### Usage Instructions
+1. Enter a value in Fahrenheit in the input field.
+2. Click the **Convert** button.
+3. The converted temperature in Celsius will be displayed below.
 
-### Explication du Code
-Le code JavaScript récupère la valeur saisie en Fahrenheit, applique la formule de conversion, et affiche le résultat. Voici le code utilisé :
+### Code Explanation
+The JavaScript code retrieves the input value in Fahrenheit, applies the conversion formula, and displays the result. Here is the code used:
 
 ```javascript
-let tempF = parseFloat(sections[1].children[1].value); // Récupère la valeur en Fahrenheit
-let tempC = (5 / 9) * (tempF - 32); // Applique la formule de conversion
-alert(`Cette température équivaut à ${tempC.toFixed(1)}°C`); // Affiche le résultat
+let tempF = parseFloat(sections[1].children[1].value); // Retrieves the value in Fahrenheit
+let tempC = (5 / 9) * (tempF - 32); // Applies the conversion formula
+alert(`This temperature is equivalent to ${tempC.toFixed(1)}°C`); // Displays the result
 ```
 
-### Résultat
-Insérez ici une capture d'écran montrant la conversion d'une température en Fahrenheit vers Celsius.
+### Result
+Insert a screenshot here showing the conversion of a temperature from Fahrenheit to Celsius.
 
 ---
 
-## 2. Conversion de Durées
-### Objectif
-Convertir une durée exprimée en secondes en jours, heures, minutes et secondes.
+## 2. Time Conversion
+### Objective
+Convert a duration expressed in seconds into days, hours, minutes, and seconds.
 
-### Mode d'utilisation
-1. Saisir une durée en secondes.
-2. Cliquer sur **Convertir**.
-3. Le résultat est affiché sous forme lisible (ex : "1 jour(s) 3 heure(s) 25 minute(s) 10 seconde(s)").
+### Usage Instructions
+1. Enter a duration in seconds.
+2. Click **Convert**.
+3. The result is displayed in a readable format (e.g., "1 day(s) 3 hour(s) 25 minute(s) 10 second(s)").
 
-### Explication du Code
-Le code décompose la durée en secondes en jours, heures, minutes et secondes en utilisant des divisions et des modulos :
+### Code Explanation
+The code breaks down the duration in seconds into days, hours, minutes, and seconds using division and modulo operations:
 
 ```javascript
-let sec = parseInt(sections[2].children[1].value); // Récupère la durée en secondes
-let jours = Math.floor(sec / 86400); // Convertit en jours
+let sec = parseInt(sections[2].children[1].value); // Retrieves the duration in seconds
+let days = Math.floor(sec / 86400); // Converts to days
 sec %= 86400;
-let heures = Math.floor(sec / 3600); // Convertit en heures
+let hours = Math.floor(sec / 3600); // Converts to hours
 sec %= 3600;
-let minutes = Math.floor(sec / 60); // Convertit en minutes
+let minutes = Math.floor(sec / 60); // Converts to minutes
 sec %= 60;
 
 let result = [];
-if (jours) result.push(`${jours} jour(s)`);
-if (heures) result.push(`${heures} heure(s)`);
+if (days) result.push(`${days} day(s)`);
+if (hours) result.push(`${hours} hour(s)`);
 if (minutes) result.push(`${minutes} minute(s)`);
-if (sec) result.push(`${sec} seconde(s)`);
+if (sec) result.push(`${sec} second(s)`);
 
-alert(`Cette durée équivaut à: ${result.join(' ')}`); // Affiche le résultat
+alert(`This duration is equivalent to: ${result.join(' ')}`); // Displays the result
 ```
 
-### Résultat
-Insérez ici une capture d'écran montrant la conversion d'une durée en secondes.
+### Result
+Insert a screenshot here showing the conversion of a duration in seconds.
 
 ---
 
-## 3. Classer Trois Nombres
-### Objectif
-Saisir trois nombres et les afficher en ordre croissant.
+## 3. Sorting Three Numbers
+### Objective
+Enter three numbers and display them in ascending order.
 
-### Mode d'utilisation
-1. Saisir trois nombres dans les champs dédiés.
-2. Cliquer sur **Classer**.
-3. Le programme trie et affiche les nombres en ordre croissant.
+### Usage Instructions
+1. Enter three numbers in the designated fields.
+2. Click **Sort**.
+3. The program sorts and displays the numbers in ascending order.
 
-### Explication du Code
-Le code utilise un algorithme de tri à bulles pour classer les trois nombres :
+### Code Explanation
+The code uses a bubble sort algorithm to sort the three numbers:
 
 ```javascript
 let nums = [
@@ -99,107 +95,103 @@ for (let i = 0; i < nums.length - 1; i++) {
     }
 }
 
-alert(`Ordre croissant: ${nums.join(' ')}`); // Affiche les nombres triés
+alert(`Ascending order: ${nums.join(' ')}`); // Displays the sorted numbers
 ```
 
-### Résultat
-Insérez ici une capture d'écran montrant trois nombres triés en ordre croissant.
+### Result
+Insert a screenshot here showing three numbers sorted in ascending order.
 
 ---
 
-## 4. Triangle d'Étoiles
-### Objectif
-Générer un motif en forme de triangle en utilisant des boucles **while** et **for**.
+## 4. Star Triangle
+### Objective
+Generate a star pattern in the shape of a triangle using **while** and **for** loops.
 
-### Mode d'utilisation
-1. Entrer une taille pour le triangle.
-2. Cliquer sur **Triangle (while)** ou **Triangle (for)** pour afficher le motif correspondant.
+### Usage Instructions
+1. Enter a size for the triangle.
+2. Click **Triangle (while)** or **Triangle (for)** to display the corresponding pattern.
 
-### Explication du Code
-Le code génère un triangle d'étoiles en utilisant des boucles imbriquées :
+### Code Explanation
+The code generates a star triangle using nested loops:
 
 ```javascript
-let taille = parseInt(sections[4].children[1].value);
+let size = parseInt(sections[4].children[1].value);
 let result = '';
-for (let i = 1; i <= taille; i++) {
+for (let i = 1; i <= size; i++) {
     for (let j = 1; j <= i; j++) {
         result += '*';
     }
     result += '\n';
 }
-alert(result); // Affiche le triangle
+alert(result); // Displays the triangle
 ```
 
-### Résultat
-Insérez ici une capture d'écran montrant un triangle d'étoiles généré.
+### Result
+Insert a screenshot here showing a generated star triangle.
 
 ---
 
-## 4-bis. Pyramide d'Étoiles
-### Objectif
-Afficher une pyramide d'étoiles centrée.
+## 4-bis. Star Pyramid
+### Objective
+Display a centered star pyramid.
 
-### Mode d'utilisation
-1. Saisir la taille de la pyramide.
-2. Cliquer sur **Afficher pyramide**.
-3. La pyramide est affichée en utilisant des espaces et des étoiles.
+### Usage Instructions
+1. Enter the size of the pyramid.
+2. Click **Display Pyramid**.
+3. The pyramid is displayed using spaces and stars.
 
-### Explication du Code
-Le code génère une pyramide en ajoutant des espaces et des étoiles de manière symétrique :
+### Code Explanation
+The code generates a pyramid by adding spaces and stars symmetrically:
 
 ```javascript
-let taille = parseInt(sections[5].children[1].value);
+let size = parseInt(sections[5].children[1].value);
 let result = '';
-for (let i = 0; i < taille; i++) {
-    let espace = ' '.repeat(taille - i - 1);
-    let etoiles = '*'.repeat(2 * i + 1);
-    result += espace + etoiles + '\n';
+for (let i = 0; i < size; i++) {
+    let space = ' '.repeat(size - i - 1);
+    let stars = '*'.repeat(2 * i + 1);
+    result += space + stars + '\n';
 }
-alert(result); // Affiche la pyramide
+alert(result); // Displays the pyramid
 ```
 
-### Résultat
-Insérez ici une capture d'écran montrant une pyramide d'étoiles.
+### Result
+Insert a screenshot here showing a star pyramid.
 
 ---
 
-## 5. Vérification de Nombre Premier
-### Objectif
-Vérifier si un nombre donné est un nombre premier.
+## 5. Prime Number Check
+### Objective
+Check if a given number is a prime number.
 
-### Mode d'utilisation
-1. Entrer un nombre entier.
-2. Cliquer sur **Tester**.
-3. Le programme vérifie si le nombre est premier et affiche le résultat.
+### Usage Instructions
+1. Enter an integer.
+2. Click **Test**.
+3. The program checks if the number is prime and displays the result.
 
-### Explication du Code
-Le code vérifie si un nombre est premier en testant ses diviseurs :
+### Code Explanation
+The code checks if a number is prime by testing its divisors:
 
 ```javascript
-let nombre = parseInt(sections[6].children[1].value);
-let estPremier = true;
-for (let i = 2; i <= Math.sqrt(nombre); i++) {
-    if (nombre % i === 0) {
-        estPremier = false;
+let number = parseInt(sections[6].children[1].value);
+let isPrime = true;
+for (let i = 2; i <= Math.sqrt(number); i++) {
+    if (number % i === 0) {
+        isPrime = false;
         break;
     }
 }
-alert(estPremier ? `${nombre} est un nombre premier` : `${nombre} n'est pas un nombre premier`);
+alert(isPrime ? `${number} is a prime number` : `${number} is not a prime number`);
 ```
 
-### Résultat
-Insérez ici une capture d'écran montrant la vérification d'un nombre premier.
+### Result
+Insert a screenshot here showing the verification of a prime number.
 
 ---
 
 ## Conclusion
-Ce projet met en pratique des concepts fondamentaux de JavaScript à travers des exercices interactifs. Vous pouvez tester et modifier le code pour mieux comprendre son fonctionnement. Les captures d'écran illustrent les résultats obtenus pour chaque exercice.
+This project demonstrates fundamental JavaScript concepts through interactive exercises. You can test and modify the code to better understand its functionality. Screenshots illustrate the results obtained for each exercise.
 
 ---
 
-### Exemple de Capture d'Écran
+### Example Screenshot
 ![image_alt](https://github.com/malakzaidi/Tps_POO_SDIA1/blob/main/TP1/src/screenshots/image_2024-10-27_111933283.png?raw=true)
-
----
-
-This version of the `README.md` file is well-structured, provides detailed explanations, and leaves space for screenshots to showcase the results of each exercise. Let me know if you need further adjustments!
