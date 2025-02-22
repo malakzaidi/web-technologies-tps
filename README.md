@@ -8,7 +8,9 @@
 5. [Star Triangle](#star-triangle)
 6. [Star Pyramid](#star-pyramid)
 7. [Prime Number Check](#prime-number-check)
-8. [Conclusion](#conclusion)
+8. [Factorial Calculation](#factorial-calculation)
+9. [Fibonacci Sequence](#fibonacci-sequence)
+10. [Conclusion](#conclusion)
 
 ---
 
@@ -108,67 +110,39 @@ alert(`Ascending order: ${nums.join(' ')}`);
 
 ---
 
-## Star Triangle
+## Factorial Calculation
 ### Objective
-Generate a star pattern in the shape of a triangle using loops.
+Compute the factorial of a given number.
 
 ### Code Explanation
 
 ```javascript
-let size = parseInt(sections[4].children[1].value);
-let result = '';
-for (let i = 1; i <= size; i++) {
-    for (let j = 1; j <= i; j++) {
-        result += '*';
-    }
-    result += '\n';
+let num = parseInt(sections[7].children[1].value);
+let factorial = 1;
+for (let i = 2; i <= num; i++) {
+    factorial *= i;
 }
-alert(result);
+alert(`The factorial of ${num} is ${factorial}`);
 ```
 
 ### Result
-![Screenshot](https://github.com/malakzaidi/web-technologies-tps/blob/main/screenshots/Screenshot%202025-02-22%20181811.png)
+![Screenshot](https://github.com/malakzaidi/web-technologies-tps/blob/main/screenshots/Screenshot%202025-02-22%20181851.png)
 
 ---
 
-## Star Pyramid
+## Fibonacci Sequence
 ### Objective
-Display a centered star pyramid.
+Generate the Fibonacci sequence up to a given number of terms.
 
 ### Code Explanation
 
 ```javascript
-let size = parseInt(sections[5].children[1].value);
-let result = '';
-for (let i = 0; i < size; i++) {
-    let space = ' '.repeat(size - i - 1);
-    let stars = '*'.repeat(2 * i + 1);
-    result += space + stars + '\n';
+let n = parseInt(sections[8].children[1].value);
+let fib = [0, 1];
+for (let i = 2; i < n; i++) {
+    fib.push(fib[i - 1] + fib[i - 2]);
 }
-alert(result);
-```
-
-### Result
-![Screenshot](https://github.com/malakzaidi/web-technologies-tps/blob/main/screenshots/Screenshot%202025-02-22%20181832.png)
-
----
-
-## Prime Number Check
-### Objective
-Check if a given number is a prime number.
-
-### Code Explanation
-
-```javascript
-let number = parseInt(sections[6].children[1].value);
-let isPrime = true;
-for (let i = 2; i <= Math.sqrt(number); i++) {
-    if (number % i === 0) {
-        isPrime = false;
-        break;
-    }
-}
-alert(isPrime ? `${number} is a prime number` : `${number} is not a prime number`);
+alert(`Fibonacci sequence: ${fib.join(', ')}`);
 ```
 
 ### Result
