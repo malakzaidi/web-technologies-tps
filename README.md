@@ -1,6 +1,9 @@
-# JavaScript Exercises and Solutions
+# JavaScript Conversion, Sorting, and Sequence Application
+
+This project demonstrates various useful JavaScript functions, including temperature conversion, time conversion, number sorting, star pyramid generation, and Fibonacci sequence calculation. Each function is implemented in JavaScript and interacts with a simple HTML interface. This README provides detailed explanations for each code snippet and instructions on how to use the application.
 
 ## Table of Contents
+
 1. [Introduction](#introduction)
 2. [Temperature Conversion](#temperature-conversion)
 3. [Time Conversion](#time-conversion)
@@ -13,223 +16,213 @@
 10. [Conclusion](#conclusion)
 
 ---
-
 ## Introduction
 This project offers several JavaScript exercises designed to explore various features of the language, including number manipulations, loops, conditions, and dynamic display on a web page.
 
-Each exercise is accompanied by a detailed description, usage instructions, an explanation of the code, and space to include screenshots showcasing the results.
-
+Each exercise is accompanied by a detailed description, usage instructions, an explanation of the code, and screenshots showcasing the results.
 ---
 
 ## Temperature Conversion
-### Objective
-Convert a given temperature from Fahrenheit to Celsius using the formula:
-\[ T(\degree C) = \frac{5}{9} \times (T(\degree F) - 32) \]
 
-### Usage Instructions
-1. Enter a value in Fahrenheit in the input field.
-2. Click the **Convert** button.
-3. The converted temperature in Celsius will be displayed below.
+### Description:
+This project converts a temperature from Fahrenheit to Celsius using the formula:
+\[
+T(\degree C) = \frac{5}{9} \times (T(\degree F) - 32)
+\]
 
-### Code Explanation
-The JavaScript code retrieves the input value in Fahrenheit, applies the conversion formula, and displays the result:
+### How It Works:
+1. **Retrieve the user input**: The user enters the temperature in Fahrenheit, which is retrieved using JavaScript.
+    ```javascript
+    let tempF = parseFloat(sections[1].children[1].value);
+    ```
+2. **Formula application**: The input is converted into Celsius using the formula:
+    ```javascript
+    let tempC = (5 / 9) * (tempF - 32);
+    ```
+3. **Display the result**: The calculated Celsius temperature is shown in an alert.
+    ```javascript
+    alert(`This temperature is equivalent to ${tempC.toFixed(1)}°C`);
+    ```
 
-```javascript
-let tempF = parseFloat(sections[1].children[1].value);
-let tempC = (5 / 9) * (tempF - 32);
-alert(`This temperature is equivalent to ${tempC.toFixed(1)}°C`);
-```
-
-### Result
-![Screenshot](https://github.com/malakzaidi/web-technologies-tps/blob/main/screenshots/Screenshot%202025-02-22%20181655.png)
+### Screenshot:
+![Temperature Conversion Screenshot](https://github.com/malakzaidi/web-technologies-tps/blob/main/screenshots/Screenshot%202025-02-22%20192913.png)
 
 ---
 
 ## Time Conversion
-### Objective
-Convert a duration expressed in seconds into days, hours, minutes, and seconds.
 
-### Usage Instructions
-1. Enter a duration in seconds.
-2. Click **Convert**.
-3. The result is displayed in a readable format.
+### Description:
+This project converts a time duration in seconds into days, hours, minutes, and remaining seconds.
 
-### Code Explanation
+### How It Works:
+1. **Retrieve the user input**: The input (in seconds) is taken and converted to an integer.
+    ```javascript
+    let sec = parseInt(sections[2].children[1].value);
+    ```
+2. **Perform the conversion**:
+    - First, we convert seconds into days by dividing by 86400.
+    - Then, we convert the remaining seconds into hours, minutes, and the leftover seconds.
+    ```javascript
+    let days = Math.floor(sec / 86400);
+    sec %= 86400;
+    let hours = Math.floor(sec / 3600);
+    sec %= 3600;
+    let minutes = Math.floor(sec / 60);
+    sec %= 60;
+    ```
+3. **Display the result**: The result is displayed as a string in the form of days, hours, minutes, and seconds.
+    ```javascript
+    alert(`This duration is equivalent to: ${result.join(' ')}`);
+    ```
 
-```javascript
-let sec = parseInt(sections[2].children[1].value);
-let days = Math.floor(sec / 86400);
-sec %= 86400;
-let hours = Math.floor(sec / 3600);
-sec %= 3600;
-let minutes = Math.floor(sec / 60);
-sec %= 60;
-
-let result = [];
-if (days) result.push(`${days} day(s)`);
-if (hours) result.push(`${hours} hour(s)`);
-if (minutes) result.push(`${minutes} minute(s)`);
-if (sec) result.push(`${sec} second(s)`);
-
-alert(`This duration is equivalent to: ${result.join(' ')}`);
-```
-
-### Result
-![Screenshot](https://github.com/malakzaidi/web-technologies-tps/blob/main/screenshots/Screenshot%202025-02-22%20181716.png)
+### Screenshot:
+![Time Conversion Screenshot](https://github.com/malakzaidi/web-technologies-tps/blob/main/screenshots/Screenshot%202025-02-22%20193001.png)
 
 ---
 
 ## Sorting Three Numbers
-### Objective
-Enter three numbers and display them in ascending order.
 
-### Code Explanation
+### Description:
+This program sorts three numbers entered by the user in ascending order.
 
-```javascript
-let nums = [
-    parseFloat(sections[3].children[1].value),
-    parseFloat(sections[3].children[2].value),
-    parseFloat(sections[3].children[3].value)
-];
-
-for (let i = 0; i < nums.length - 1; i++) {
-    for (let j = i + 1; j < nums.length; j++) {
-        if (nums[i] > nums[j]) {
-            let temp = nums[i];
-            nums[i] = nums[j];
-            nums[j] = temp;
+### How It Works:
+1. **Retrieve the input**: The three numbers are obtained from the user and stored in an array.
+    ```javascript
+    let nums = [
+        parseFloat(sections[3].children[1].value),
+        parseFloat(sections[3].children[2].value),
+        parseFloat(sections[3].children[3].value)
+    ];
+    ```
+2. **Sort the numbers**: A nested loop is used to compare each number and swap them if necessary.
+    ```javascript
+    for (let i = 0; i < nums.length - 1; i++) {
+        for (let j = i + 1; j < nums.length; j++) {
+            if (nums[i] > nums[j]) {
+                let temp = nums[i];
+                nums[i] = nums[j];
+                nums[j] = temp;
+            }
         }
     }
-}
+    ```
+3. **Display the result**: The sorted numbers are displayed in ascending order.
+    ```javascript
+    alert(`Ascending order: ${nums.join(' ')}`);
+    ```
 
-alert(`Ascending order: ${nums.join(' ')}`);
-```
-
-### Result
-![Screenshot](https://github.com/malakzaidi/web-technologies-tps/blob/main/screenshots/Screenshot%202025-02-22%20181751.png)
+### Screenshot:
+![Sorting Numbers Screenshot](https://github.com/malakzaidi/web-technologies-tps/blob/main/screenshots/Screenshot%202025-02-22%20193012.png)
 
 ---
 
 ## Star Pyramid
-### Objective
-Display a pyramid of stars based on user input for the number of rows.
 
-### Code Explanation
+### Description:
+This project generates a star pyramid pattern based on the number of rows input by the user.
 
-```javascript
-let rows = parseInt(sections[6].children[1].value);
-let pyramid = '';
-for (let i = 1; i <= rows; i++) {
+### How It Works:
+1. **Retrieve the user input**: The number of rows for the pyramid is taken from the input.
+    ```javascript
+    let rows = parseInt(sections[6].children[1].value);
+    ```
+2. **Generate the pyramid**: A loop iterates to build the pyramid, calculating the number of spaces and stars for each row.
+    ```javascript
     pyramid += ' '.repeat(rows - i) + '*'.repeat(2 * i - 1) + '\n';
-}
-alert(pyramid);
-```
+    ```
+3. **Display the result**: The star pyramid is displayed in an alert.
+    ```javascript
+    alert(pyramid);
+    ```
 
-### Result
-For `rows = 5`, the output will be:
-```
-    *
-   ***
-  *****
- *******
-*********
-```
-
-### Screenshot
-![Screenshot](https://github.com/malakzaidi/web-technologies-tps/blob/main/screenshots/Screenshot%202025-02-22%20192546.png)
+### Screenshot:
+![Star Pyramid Screenshot](https://github.com/malakzaidi/web-technologies-tps/blob/main/screenshots/Screenshot%202025-02-22%20193025.png)
 
 ---
 
 ## Fibonacci Sequence
-### Objective
-Compute the nth term of the Fibonacci sequence and find the first term greater than a given limit.
 
-### Code Explanation
-#### Finding the nth Term
-```javascript
-let n = parseInt(sections[7].children[1].value);
-let a = 0, b = 1, c;
-if (n === 0) {
-    alert(`Le terme de rang ${n} est ${a}`);
-    return;
-}
-for (let i = 2; i <= n; i++) {
-    c = a + b;
-    a = b;
-    b = c;
-}
-alert(`Le terme de rang ${n} est ${b}`);
-```
-![Screenshot](https://github.com/malakzaidi/web-technologies-tps/blob/main/screenshots/Screenshot%202025-02-22%20192937.png)
+### Description:
+This program calculates the Fibonacci sequence and displays either the nth term or the first Fibonacci number greater than a given limit.
 
-#### Finding the First Term Greater than a Given Limit
-```javascript
-let limite = parseInt(sections[7].children[3].value);
-let a = 0, b = 1, c;
-let rang = 1;
-while (b <= limite) {
-    c = a + b;
-    a = b;
-    b = c;
-    rang++;
-}
-alert(`Le premier terme supérieur à ${limite} est ${b} (rang ${rang})`);
-```
-![Screenshot](https://github.com/malakzaidi/web-technologies-tps/blob/main/screenshots/Screenshot%202025-02-22%20193001.png)
+### Finding the nth Fibonacci Term:
+1. **Retrieve the input**: The nth term of the Fibonacci sequence is retrieved.
+    ```javascript
+    let n = parseInt(sections[7].children[1].value);
+    ```
+2. **Calculate the nth term**: The Fibonacci sequence is calculated using two variables `a` and `b`, which store the previous two terms.
+    ```javascript
+    for (let i = 2; i <= n; i++) {
+        c = a + b;
+        a = b;
+        b = c;
+    }
+    ```
+3. **Display the result**: The nth term is displayed in an alert.
+    ```javascript
+    alert(`Le terme de rang ${n} est ${b}`);
+    ```
+
+### Finding the First Fibonacci Term Greater Than a Limit:
+1. **Retrieve the input**: The limit is retrieved from the input field.
+    ```javascript
+    let limite = parseInt(sections[7].children[3].value);
+    ```
+2. **Calculate the first term greater than the limit**: A while loop checks each Fibonacci number until one greater than the limit is found.
+    ```javascript
+    while (b <= limite) {
+        c = a + b;
+        a = b;
+        b = c;
+        rang++;
+    }
+    ```
+3. **Display the result**: The first Fibonacci number greater than the limit is displayed along with its rank.
+    ```javascript
+    alert(`Le premier terme supérieur à ${limite} est ${b} (rang ${rang})`);
+    ```
+
+### Screenshot:
+![Fibonacci Sequence Screenshot](https://github.com/malakzaidi/web-technologies-tps/blob/main/screenshots/Screenshot%202025-02-22%20193032.png)
 
 ---
 
-#### Square Root Approximation
-How It Works
-Retrieve the user input
+## Square Root Approximation
 
-sections[8].children[1].value: Gets the input value from the user.
-parseFloat(...): Converts the value to a floating-point number.
-Validate the input
+### Description:
+This program approximates the square root of a number using the Newton-Raphson method.
 
-The function ensures A is between 1 and 100.
-If A is out of range, it displays an alert and stops execution.
-Initialize variables
+### How It Works:
+1. **Retrieve the user input**: The number for which the square root is to be calculated is retrieved.
+    ```javascript
+    let A = parseFloat(sections[8].children[1].value);
+    ```
+2. **Input validation**: Ensures that the input is between 1 and 100. If it's out of range, the program stops and alerts the user.
+    ```javascript
+    if (A < 1 || A > 100) {
+        alert("Please enter a number between 1 and 100");
+        return;
+    }
+    ```
+3. **Initial guess**: The initial guess for the square root is set to half of the number.
+    ```javascript
+    let x = A / 2;
+    let precision = 1e-6;
+    ```
+4. **Newton-Raphson Iteration**: The approximation is refined using the Newton-Raphson formula.
+    ```javascript
+    let x_new = 0.5 * (x + A / x);
+    ```
+5. **Display the result**: The result is displayed when the approximation is accurate to within the specified precision.
+    ```javascript
+    alert(`The approximate square root of ${A} is ${x.toFixed(6)}`);
+    ```
 
-x = A / 2: The initial guess for the square root is set to A / 2.
-precision = 1e-6: This sets a very small threshold (0.000001) to determine when to stop iterating.
-Newton-Raphson Iteration
+### Screenshot:
+![Square Root Approximation Screenshot](https://github.com/malakzaidi/web-technologies-tps/blob/main/screenshots/Screenshot%202025-02-22%20193038.png)
 
-The algorithm refines the guess x using the formula:
-𝑥
-new
-=
-1
-2
-(
-𝑥
-+
-𝐴
-𝑥
-)
-x 
-new
-​
- = 
-2
-1
-​
- (x+ 
-x
-A
-​
- )
-The process repeats until the difference between x² and A is smaller than 1e-6.
-Display the result
-
-Once the condition is met, the computed approximate square root is displayed in an alert.
-![Screenshot](https://github.com/malakzaidi/web-technologies-tps/blob/main/screenshots/Screenshot%202025-02-22%20193001.png)
+---
 
 ## Conclusion
-This project demonstrates fundamental JavaScript concepts through interactive exercises. You can test and modify the code to better understand its functionality. Screenshots illustrate the results obtained for each exercise.
 
----
-
-### Example Screenshot
-![Screenshot](https://github.com/malakzaidi/web-technologies-tps/blob/main/screenshots/Screenshot%202025-02-22%20192546.png)
-
+This repository provides simple but effective examples of how core concepts in web technologies can be implemented using JavaScript. It includes practical applications such as conversions, sorting algorithms, Fibonacci sequences, and numerical approximations. Each section is designed to demonstrate key concepts in programming and algorithmic thinking, making it a useful resource for both beginners and experienced developers.
