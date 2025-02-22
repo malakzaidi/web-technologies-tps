@@ -20,14 +20,14 @@ This project demonstrates various useful JavaScript functions, including tempera
 This project offers several JavaScript exercises designed to explore various features of the language, including number manipulations, loops, conditions, and dynamic display on a web page.
 
 Each exercise is accompanied by a detailed description, usage instructions, an explanation of the code, and screenshots showcasing the results.
----
+
 
 ## Temperature Conversion
 
 ### Description:
 This project converts a temperature from Fahrenheit to Celsius using the formula:
 \[
-T(\degree C) = \frac{5}{9} \times (T(\degree F) - 32)
+T(°C) = \frac{5}{9} \times (T(°F) - 32)
 \]
 
 ### How It Works:
@@ -45,7 +45,7 @@ T(\degree C) = \frac{5}{9} \times (T(\degree F) - 32)
     ```
 
 ### Screenshot:
-![Temperature Conversion Screenshot](https://github.com/malakzaidi/web-technologies-tps/blob/main/screenshots/Screenshot%202025-02-22%20192913.png)
+![Temperature Conversion Screenshot](https://github.com/malakzaidi/web-technologies-tps/blob/main/screenshots/Screenshot%202025-02-22%20181655.png)
 
 ---
 
@@ -76,7 +76,7 @@ This project converts a time duration in seconds into days, hours, minutes, and 
     ```
 
 ### Screenshot:
-![Time Conversion Screenshot](https://github.com/malakzaidi/web-technologies-tps/blob/main/screenshots/Screenshot%202025-02-22%20193001.png)
+![Time Conversion Screenshot](https://github.com/malakzaidi/web-technologies-tps/blob/main/screenshots/Screenshot%202025-02-22%20181716.png)
 
 ---
 
@@ -112,33 +112,66 @@ This program sorts three numbers entered by the user in ascending order.
     ```
 
 ### Screenshot:
-![Sorting Numbers Screenshot](https://github.com/malakzaidi/web-technologies-tps/blob/main/screenshots/Screenshot%202025-02-22%20193012.png)
+![Sorting Numbers Screenshot](https://github.com/malakzaidi/web-technologies-tps/blob/main/screenshots/Screenshot%202025-02-22%20181751.png)
+
 
 ---
 
-## Star Pyramid
+## 4. Star Triangle
+### Objective
+Generate a star pattern in the shape of a triangle using **while** and **for** loops.
 
-### Description:
-This project generates a star pyramid pattern based on the number of rows input by the user.
+### Usage Instructions
+1. Enter a size for the triangle.
+2. Click **Triangle (while)** or **Triangle (for)** to display the corresponding pattern.
 
-### How It Works:
-1. **Retrieve the user input**: The number of rows for the pyramid is taken from the input.
-    ```javascript
-    let rows = parseInt(sections[6].children[1].value);
-    ```
-2. **Generate the pyramid**: A loop iterates to build the pyramid, calculating the number of spaces and stars for each row.
-    ```javascript
-    pyramid += ' '.repeat(rows - i) + '*'.repeat(2 * i - 1) + '\n';
-    ```
-3. **Display the result**: The star pyramid is displayed in an alert.
-    ```javascript
-    alert(pyramid);
-    ```
+### Code Explanation
+The code generates a star triangle using nested loops:
 
-### Screenshot:
-![Star Pyramid Screenshot](https://github.com/malakzaidi/web-technologies-tps/blob/main/screenshots/Screenshot%202025-02-22%20193025.png)
+```javascript
+let size = parseInt(sections[4].children[1].value);
+let result = '';
+for (let i = 1; i <= size; i++) {
+    for (let j = 1; j <= i; j++) {
+        result += '*';
+    }
+    result += '\n';
+}
+alert(result); // Displays the triangle
+```
+
+### Result
+Insert a screenshot here showing a generated star triangle.
+![image_alt](https://github.com/malakzaidi/web-technologies-tps/blob/main/screenshots/Screenshot%202025-02-22%20181811.png)
 
 ---
+
+## 4-bis. Star Pyramid
+### Objective
+Display a centered star pyramid.
+
+### Usage Instructions
+1. Enter the size of the pyramid.
+2. Click **Display Pyramid**.
+3. The pyramid is displayed using spaces and stars.
+
+### Code Explanation
+The code generates a pyramid by adding spaces and stars symmetrically:
+
+```javascript
+let size = parseInt(sections[5].children[1].value);
+let result = '';
+for (let i = 0; i < size; i++) {
+    let space = ' '.repeat(size - i - 1);
+    let stars = '*'.repeat(2 * i + 1);
+    result += space + stars + '\n';
+}
+alert(result); // Displays the pyramid
+```
+
+### Result
+Insert a screenshot here showing a star pyramid.
+![image_alt](https://github.com/malakzaidi/web-technologies-tps/blob/main/screenshots/Screenshot%202025-02-22%20181832.png)
 
 ## Fibonacci Sequence
 
@@ -185,7 +218,34 @@ This program calculates the Fibonacci sequence and displays either the nth term 
 ### Screenshot:
 ![Fibonacci Sequence Screenshot](https://github.com/malakzaidi/web-technologies-tps/blob/main/screenshots/Screenshot%202025-02-22%20193032.png)
 
----
+## 5. Prime Number Check
+### Objective
+Check if a given number is a prime number.
+
+### Usage Instructions
+1. Enter an integer.
+2. Click **Test**.
+3. The program checks if the number is prime and displays the result.
+
+### Code Explanation
+The code checks if a number is prime by testing its divisors:
+
+```javascript
+let number = parseInt(sections[6].children[1].value);
+let isPrime = true;
+for (let i = 2; i <= Math.sqrt(number); i++) {
+    if (number % i === 0) {
+        isPrime = false;
+        break;
+    }
+}
+alert(isPrime ? `${number} is a prime number` : `${number} is not a prime number`);
+```
+
+### Result
+Insert a screenshot here showing the verification of a prime number.
+![image_alt](https://github.com/malakzaidi/web-technologies-tps/blob/main/screenshots/Screenshot%202025-02-22%20181851.png)
+
 
 ## Square Root Approximation
 
