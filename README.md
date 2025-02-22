@@ -25,10 +25,7 @@ Each exercise is accompanied by a detailed description, usage instructions, an e
 ## Temperature Conversion
 
 ### Description:
-This project converts a temperature from Fahrenheit to Celsius using the formula:
-\[
-T(°C) = \frac{5}{9} \times (T(°F) - 32)
-\]
+This project converts a temperature from Fahrenheit to Celsius 
 
 ### How It Works:
 1. **Retrieve the user input**: The user enters the temperature in Fahrenheit, which is retrieved using JavaScript.
@@ -279,7 +276,7 @@ This program approximates the square root of a number using the Newton-Raphson m
     ```
 
 ### Screenshot:
-![Square Root Approximation Screenshot](https://github.com/malakzaidi/web-technologies-tps/blob/main/screenshots/Screenshot%202025-02-22%20193038.png)
+![Square Root Approximation Screenshot](https://github.com/malakzaidi/web-technologies-tps/blob/main/screenshots/Screenshot%202025-02-22%20203450.png)
 
 ---
 
