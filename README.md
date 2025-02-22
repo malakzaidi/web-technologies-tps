@@ -182,5 +182,5 @@ This project demonstrates fundamental JavaScript concepts through interactive ex
 ---
 
 ### Example Screenshot
-![Screenshot](https://github.com/malakzaidi/web-technologies-tps/blob/main/screenshots/Screenshot%202025-02-22%20181532.png)
+![Screenshot](https://github.com/malakzaidi/web-technologies-tps/blob/main/screenshots/Screenshot%202025-02-22%20192546.png)
 
