@@ -194,4 +194,4 @@ This project demonstrates fundamental JavaScript concepts through interactive ex
 ---
 
 ### Example Screenshot
-![image_alt](https://github.com/malakzaidi/Tps_POO_SDIA1/blob/main/TP1/src/screenshots/image_2024-10-27_111933283.png?raw=true)
+![image_alt](https://github.com/malakzaidi/web-technologies-tps/blob/main/screenshots/Screenshot%202025-02-22%20181532.png)
