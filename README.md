@@ -8,8 +8,8 @@
 5. [Star Triangle](#star-triangle)
 6. [Star Pyramid](#star-pyramid)
 7. [Prime Number Check](#prime-number-check)
-8. [Factorial Calculation](#factorial-calculation)
-9. [Fibonacci Sequence](#fibonacci-sequence)
+8. [Fibonacci Sequence](#fibonacci-sequence)
+9. [Square Root Approximation](#square-root-approximation)
 10. [Conclusion](#conclusion)
 
 ---
@@ -110,45 +110,120 @@ alert(`Ascending order: ${nums.join(' ')}`);
 
 ---
 
-## Factorial Calculation
+## Star Pyramid
 ### Objective
-Compute the factorial of a given number.
+Display a pyramid of stars based on user input for the number of rows.
 
 ### Code Explanation
 
 ```javascript
-let num = parseInt(sections[7].children[1].value);
-let factorial = 1;
-for (let i = 2; i <= num; i++) {
-    factorial *= i;
+let rows = parseInt(sections[6].children[1].value);
+let pyramid = '';
+for (let i = 1; i <= rows; i++) {
+    pyramid += ' '.repeat(rows - i) + '*'.repeat(2 * i - 1) + '\n';
 }
-alert(`The factorial of ${num} is ${factorial}`);
+alert(pyramid);
 ```
 
 ### Result
-![Screenshot](https://github.com/malakzaidi/web-technologies-tps/blob/main/screenshots/Screenshot%202025-02-22%20181851.png)
+For `rows = 5`, the output will be:
+```
+    *
+   ***
+  *****
+ *******
+*********
+```
+
+### Screenshot
+![Screenshot](https://github.com/malakzaidi/web-technologies-tps/blob/main/screenshots/Screenshot%202025-02-22%20192546.png)
 
 ---
 
 ## Fibonacci Sequence
 ### Objective
-Generate the Fibonacci sequence up to a given number of terms.
+Compute the nth term of the Fibonacci sequence and find the first term greater than a given limit.
 
 ### Code Explanation
-
+#### Finding the nth Term
 ```javascript
-let n = parseInt(sections[8].children[1].value);
-let fib = [0, 1];
-for (let i = 2; i < n; i++) {
-    fib.push(fib[i - 1] + fib[i - 2]);
+let n = parseInt(sections[7].children[1].value);
+let a = 0, b = 1, c;
+if (n === 0) {
+    alert(`Le terme de rang ${n} est ${a}`);
+    return;
 }
-alert(`Fibonacci sequence: ${fib.join(', ')}`);
+for (let i = 2; i <= n; i++) {
+    c = a + b;
+    a = b;
+    b = c;
+}
+alert(`Le terme de rang ${n} est ${b}`);
 ```
+![Screenshot](https://github.com/malakzaidi/web-technologies-tps/blob/main/screenshots/Screenshot%202025-02-22%20192937.png)
 
-### Result
-![Screenshot](https://github.com/malakzaidi/web-technologies-tps/blob/main/screenshots/Screenshot%202025-02-22%20181851.png)
+#### Finding the First Term Greater than a Given Limit
+```javascript
+let limite = parseInt(sections[7].children[3].value);
+let a = 0, b = 1, c;
+let rang = 1;
+while (b <= limite) {
+    c = a + b;
+    a = b;
+    b = c;
+    rang++;
+}
+alert(`Le premier terme supérieur à ${limite} est ${b} (rang ${rang})`);
+```
+![Screenshot](https://github.com/malakzaidi/web-technologies-tps/blob/main/screenshots/Screenshot%202025-02-22%20193001.png)
 
 ---
+
+#### Square Root Approximation
+How It Works
+Retrieve the user input
+
+sections[8].children[1].value: Gets the input value from the user.
+parseFloat(...): Converts the value to a floating-point number.
+Validate the input
+
+The function ensures A is between 1 and 100.
+If A is out of range, it displays an alert and stops execution.
+Initialize variables
+
+x = A / 2: The initial guess for the square root is set to A / 2.
+precision = 1e-6: This sets a very small threshold (0.000001) to determine when to stop iterating.
+Newton-Raphson Iteration
+
+The algorithm refines the guess x using the formula:
+𝑥
+new
+=
+1
+2
+(
+𝑥
++
+𝐴
+𝑥
+)
+x 
+new
+​
+ = 
+2
+1
+​
+ (x+ 
+x
+A
+​
+ )
+The process repeats until the difference between x² and A is smaller than 1e-6.
+Display the result
+
+Once the condition is met, the computed approximate square root is displayed in an alert.
+![Screenshot](https://github.com/malakzaidi/web-technologies-tps/blob/main/screenshots/Screenshot%202025-02-22%20193001.png)
 
 ## Conclusion
 This project demonstrates fundamental JavaScript concepts through interactive exercises. You can test and modify the code to better understand its functionality. Screenshots illustrate the results obtained for each exercise.
