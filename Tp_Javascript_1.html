@@ -59,6 +59,22 @@
         <button>Tester</button>
     </div>
 
+    <!-- Exercice 6 -->
+    <div class="container">
+        <h3>6. Suite de Fibonacci</h3>
+        <input type="number" placeholder="Entrer un rang n">
+        <button>Calculer le n-ième terme</button>
+        <input type="number" placeholder="Entrer une valeur limite">
+        <button>Trouver le premier terme supérieur</button>
+    </div>
+
+    <!-- Exercice 7 -->
+    <div class="container">
+        <h3>7. Valeur approchée de la √ d'un nombre réel positif</h3>
+        <input type="number" placeholder="Entrer un nombre A (1 ≤ A ≤ 100)">
+        <button>Calculer √A</button>
+    </div>
+
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             let sections = document.body.children;
@@ -188,6 +204,50 @@
                 alert(estPremier
                     ? `${nombre} est un nombre premier`
                     : `${nombre} n'est pas un nombre premier, divisible par ${diviseur}`);
+            };
+
+            // Exercice 6 : Suite de Fibonacci
+            sections[7].children[2].onclick = function() {
+                let n = parseInt(sections[7].children[1].value);
+                let a = 0, b = 1, c;
+                if (n === 0) {
+                    alert(`Le terme de rang ${n} est ${a}`);
+                    return;
+                }
+                for (let i = 2; i <= n; i++) {
+                    c = a + b;
+                    a = b;
+                    b = c;
+                }
+                alert(`Le terme de rang ${n} est ${b}`);
+            };
+
+            sections[7].children[4].onclick = function() {
+                let limite = parseInt(sections[7].children[3].value);
+                let a = 0, b = 1, c;
+                let rang = 1;
+                while (b <= limite) {
+                    c = a + b;
+                    a = b;
+                    b = c;
+                    rang++;
+                }
+                alert(`Le premier terme supérieur à ${limite} est ${b} (rang ${rang})`);
+            };
+
+            // Exercice 7 : Valeur approchée de la √ d'un nombre réel positif
+            sections[8].children[2].onclick = function() {
+                let A = parseFloat(sections[8].children[1].value);
+                if (A < 1 || A > 100) {
+                    alert("Le nombre A doit être compris entre 1 et 100.");
+                    return;
+                }
+                let x = A / 2;
+                let precision = 1e-6;
+                while (Math.abs(x * x - A) > precision) {
+                    x = 0.5 * (x + A / x);
+                }
+                alert(`Valeur approchée de la racine carrée de ${A} = ${x}`);
             };
         });
     </script>
