@@ -47,9 +47,9 @@ button.onclick = function() {
 Objective
 Convert seconds to days, hours, minutes, seconds.
 
-Code
-JavaScript
+### Code
 
+```javascript
 button.onclick = function() {
     let sec = parseInt(input.value);
     if (!isNaN(sec) && sec >= 0) {
@@ -66,16 +66,15 @@ button.onclick = function() {
     }
 };
 
-`` 
+```
 ![image_alt](https://github.com/malakzaidi/web-technologies-tps/blob/main/screenshots/Screenshot%202025-02-26%20021814.png)
 
 🔢 Exercise 3: Sorting Three Numbers
 Objective
 Sort three numbers in ascending order.
+### Code
 
-Code
-JavaScript
-
+```javascript
 button.onclick = function() {
     let nums = [];
     let valid = true;
@@ -94,16 +93,17 @@ button.onclick = function() {
         alert("Veuillez entrer des valeurs numériques valides pour les trois nombres.");
     }
 };
-`` 
+
+```
 ![image_alt](https://github.com/malakzaidi/web-technologies-tps/blob/main/screenshots/Screenshot%202025-02-26%20021836.png)
 
 🔺 Exercise 4: Star Triangle
 Objective
 Display a star triangle pattern based on the given size.
 
-Code
-JavaScript
+### Code
 
+```javascript
 buttons[0].onclick = function() {
     let taille = parseInt(input.value);
     if (!isNaN(taille) && taille > 0) {
@@ -116,7 +116,8 @@ buttons[0].onclick = function() {
         alert("Veuillez entrer une taille valide (nombre entier positif).");
     }
 };
-`` 
+
+```
 ![image_alt](https://github.com/malakzaidi/web-technologies-tps/blob/main/screenshots/Screenshot%202025-02-26%20021852.png)
 
 
@@ -124,9 +125,9 @@ buttons[0].onclick = function() {
 Objective
 Display a star pyramid pattern based on the given size.
 
-Code
-JavaScript
+### Code
 
+```
 button.onclick = function() {
     let taille = parseInt(input.value);
     if (!isNaN(taille) && taille > 0) {
@@ -139,7 +140,7 @@ button.onclick = function() {
         alert("Veuillez entrer une taille valide (nombre entier positif).");
     }
 };
-`` 
+```
 ![image_alt](https://github.com/malakzaidi/web-technologies-tps/blob/main/screenshots/Screenshot%202025-02-26%20021925.png)
 
 
@@ -147,9 +148,9 @@ button.onclick = function() {
 Objective
 Check if a given number is a prime number.
 
-Code
-JavaScript
+### Code
 
+```javascript
 button.onclick = function() {
     let nombre = parseInt(input.value);
     if (!isNaN(nombre)) {
@@ -173,16 +174,17 @@ button.onclick = function() {
         alert("Veuillez entrer une valeur numérique valide.");
     }
 };
-`` 
+
+```
 ![image_alt](https://github.com/malakzaidi/web-technologies-tps/blob/main/screenshots/Screenshot%202025-02-26%20021925.png)
 
 🌀 Exercise 6: Fibonacci Sequence
 Objective
 Calculate the nth term of the Fibonacci sequence or find the first term greater than a given value.
 
-Code
-JavaScript
+### Code
 
+```javascript
 buttons[0].onclick = function() {
     let n = parseInt(inputs[0].value);
     if (!isNaN(n) && n >= 0) {
@@ -213,7 +215,8 @@ buttons[1].onclick = function() {
         alert("Veuillez entrer une limite valide (nombre entier non négatif).");
     }
 };
-`` 
+
+```
 ![image_alt](https://github.com/malakzaidi/web-technologies-tps/blob/main/screenshots/Screenshot%202025-02-26%20021946.png)
 
 ---
