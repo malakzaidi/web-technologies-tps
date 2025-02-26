@@ -1,10 +1,11 @@
-# Web Technologies Exercises
+# 🌐 JavaScript Events Exercises
 
 This repository contains a series of exercises focused on JavaScript and web development. Each exercise is designed to help you understand different aspects of web technologies, from basic JavaScript functionalities to more advanced concepts like event handling and DOM manipulation.
 
-## Exercises Overview
+## 📋 Exercises Overview
 
-### Exercise 1: Permutation
+### Exercise 1: Permutation 🔄
+
 **Objective:** Create a form with two text fields and a button. When the button is clicked, the contents of the two text fields should be swapped.
 
 **Code Explanation:**
@@ -48,15 +49,18 @@ This repository contains a series of exercises focused on JavaScript and web dev
 </html>
 ```
 
-**Visual Demonstration:**
+**✨ Visual Demonstration:**
 
 *Before Permutation:*
-<img src="/api/placeholder/600/300" alt="Screenshot showing the form before permutation with sample text entered in both fields" />
+![image_alt](https://github.com/malakzaidi/web-technologies-tps/blob/main/screenshots/Screenshot%202025-02-25%20224712.png)
 
 *After Permutation:*
-<img src="/api/placeholder/600/300" alt="Screenshot showing the form after clicking the button, with the text values swapped between fields" />
+![image_alt](https://github.com/malakzaidi/web-technologies-tps/blob/main/screenshots/Screenshot%202025-02-25%20224737.png)
 
-### Exercise 2: Simple Calculator
+---
+
+### Exercise 2: Simple Calculator 🧮
+
 **Objective:** Create a simple calculator that can perform basic arithmetic operations: addition, subtraction, multiplication, and division.
 
 **Code Explanation:**
@@ -154,10 +158,21 @@ This repository contains a series of exercises focused on JavaScript and web dev
 </html>
 ```
 
-**Visual Demonstration:**
-<img src="/api/placeholder/600/300" alt="Screenshot showing the simple calculator with sample calculation result" />
+**✨ Visual Demonstration:**
+![image_alt](https://github.com/malakzaidi/web-technologies-tps/blob/main/screenshots/Screenshot%202025-02-25%20225203.png)
 
-### Exercise 3: BMI Calculator
+**Operations Supported:**
+| Operation | Symbol | Example |
+|-----------|--------|---------|
+| Addition | ➕ | 5 + 3 = 8 |
+| Subtraction | ➖ | 10 - 4 = 6 |
+| Multiplication | ✖️ | 6 × 7 = 42 |
+| Division | ➗ | 20 ÷ 5 = 4 |
+
+---
+
+### Exercise 3: BMI Calculator 📏⚖️
+
 **Objective:** Develop a BMI (Body Mass Index) calculator that calculates the BMI based on user input for weight and height.
 
 **Code Explanation:**
@@ -224,109 +239,128 @@ This repository contains a series of exercises focused on JavaScript and web dev
 </html>
 ```
 
-**Visual Demonstration:**
-<img src="/api/placeholder/600/300" alt="Screenshot showing the BMI calculator with sample input and result" />
+**✨ Visual Demonstration:**
+![image_alt](https://github.com/malakzaidi/web-technologies-tps/blob/main/screenshots/Screenshot%202025-02-25%20224949.png)
 
-### Exercise 4: Advanced Calculator
-**Objective:** Develop a scientific calculator that can perform advanced mathematical operations such as square root, exponentiation, trigonometric functions, and logarithms.
+**BMI Categories Chart:**
 
-**Code Explanation:**
-- The calculator features a clean and intuitive user interface with a display screen and a grid of operation buttons.
-- It implements a wide range of mathematical functions including:
-  - Basic arithmetic operations (addition, subtraction, multiplication, division)
-  - Trigonometric functions (sin, cos, tan)
-  - Logarithmic functions (ln, log10)
-  - Power functions (square, power, square root)
-  - Constants (e)
-  - Special operations (factorial, percentage, inverse)
-- Error handling is implemented for invalid operations (division by zero, negative square root, etc.)
-- The calculator evaluates expressions using JavaScript's eval() function with proper input sanitization.
+| Category | BMI Range | Indication |
+|----------|-----------|------------|
+| 🍃 Underweight | < 18.5 | Insuffisance pondérale |
+| ✅ Normal | 18.5 - 24.9 | Corpulence normale |
+| ⚠️ Overweight | 25.0 - 29.9 | Surpoids |
+| 🔴 Obesity Class I | 30.0 - 34.9 | Obésité modérée |
+| 🔴🔴 Obesity Class II | 35.0 - 39.9 | Obésité sévère |
+| 🔴🔴🔴 Obesity Class III | ≥ 40.0 | Obésité morbide ou massive |
 
-```html
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculatrice Scientifique</title>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f5f5f5;
-            font-family: Arial, sans-serif;
-        }
-        
-        .calculator {
-            width: 500px;
-            border: 1px solid #ccc;
-            padding: 15px;
-            background-color: #fff;
-        }
-        
-        .display {
-            width: 100%;
-            height: 40px;
-            margin-bottom: 15px;
-            padding: 5px;
-            font-size: 20px;
-            text-align: right;
-            background-color: #f0f0f0;
-            border: 1px solid #ddd;
-            box-sizing: border-box;
-        }
-        
-        .buttons {
-            display: grid;
-            grid-template-columns: repeat(7, 1fr);
-            grid-gap: 5px;
-        }
-        
-        button {
-            padding: 10px 5px;
-            font-size: 16px;
-            background-color: #909090;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-        
-        button:hover {
-            background-color: #777;
-        }
-    </style>
-</head>
-<body>
-    <!-- Calculator HTML structure -->
-</body>
-</html>
+---
+
+### Exercise 4: Advanced Scientific Calculator 🧪🔬
+
+**Objective:** Develop a comprehensive scientific calculator that can perform advanced mathematical operations such as square root, exponentiation, trigonometric functions, and logarithms.
+
+![image_alt](https://github.com/malakzaidi/web-technologies-tps/blob/main/screenshots/Screenshot%202025-02-25%20233708.png)
+
+**✨ Key Features:**
+
+| Feature | Icon | Description |
+|---------|------|-------------|
+| **Trigonometric Functions** | 📐 | Calculate sine, cosine, and tangent values |
+| **Logarithmic Functions** | 📊 | Natural logarithm (ln) and base-10 logarithm (log) |
+| **Power Operations** | 💪 | Square, power, and square root calculations |
+| **Constants** | 🧬 | Mathematical constants like e (Euler's number) |
+| **Factorial** | ❗ | Calculate factorial of a number (n!) |
+| **Memory Functions** | 🧠 | Store and recall calculation results |
+| **Error Handling** | 🛡️ | Graceful handling of invalid operations |
+
+**Code Implementation Highlights:**
+
+```javascript
+// Example of the square root function implementation
+function sqrt() {
+    const value = getCurrentValue();
+    if (value < 0) {
+        display.value = 'Erreur';
+        setTimeout(() => {
+            clearDisplay();
+        }, 1500);
+        return;
+    }
+    displayValue = Math.sqrt(value).toString();
+    display.value = displayValue;
+}
+
+// Example of the trigonometric function implementation
+function sin() {
+    const value = getCurrentValue();
+    displayValue = Math.sin(value).toString();
+    display.value = displayValue;
+}
+
+// Example of error handling for division
+function inv() {
+    const value = getCurrentValue();
+    if (value === 0) {
+        display.value = 'Erreur';
+        setTimeout(() => {
+            clearDisplay();
+        }, 1500);
+        return;
+    }
+    displayValue = (1 / value).toString();
+    display.value = displayValue;
+}
 ```
 
-**Key Features:**
-1. **Modern Grid Layout** - The calculator uses CSS Grid for a responsive button layout
-2. **Comprehensive Functions** - Covers all essential scientific calculator operations
-3. **Error Handling** - Gracefully handles mathematical errors with user-friendly messages
-4. **Expression Evaluation** - Can evaluate complex mathematical expressions
-5. **Real-time Display** - Updates the display as users input their calculations
+**📱 UI Design Features:**
+- **Grid Layout** - Modern responsive design using CSS Grid
+- **Color-Coded Buttons** - Intuitive visual grouping of related functions
+- **Sleek Display** - Clean, easy-to-read results display
+- **Hover Effects** - Interactive visual feedback for better user experience
 
-**Visual Demonstration:**
-<img src="/api/placeholder/600/400" alt="Screenshot showing the scientific calculator with complex calculation result" />
+**🔄 Operation Flow:**
 
-**Functionality Highlights:**
-- **Memory Functions:** Store and recall calculation results
-- **Scientific Operations:** Performs advanced mathematical functions
-- **Error Prevention:** Validates input to prevent invalid operations
-- **Visual Feedback:** Provides clear visual feedback for user actions
+```mermaid
+graph TD
+    A[User Input] --> B{Valid Input?}
+    B -->|Yes| C[Process Calculation]
+    B -->|No| D[Display Error]
+    C --> E[Update Display]
+    D --> F[Clear After Timeout]
+    F --> A
+    E --> A
+```
 
-**Implementation Notes:**
-The calculator implements a robust evaluation system that handles various edge cases such as:
-- Division by zero
-- Negative values for logarithms
-- Non-integer values for factorial operations
-- Parsing of complex expressions with multiple operations
+**⚙️ Technical Details:**
+- **Precision Handling** - Maintains calculation accuracy across operations
+- **Expression Evaluation** - Parses and evaluates complex mathematical expressions
+- **Input Validation** - Prevents invalid operations and provides helpful error messages
+- **Event Handling** - Responds to user interactions with appropriate calculations
 
-## Conclusion
-These exercises cover a range of JavaScript functionalities and web development techniques. By completing these exercises, you will gain a solid understanding of how to manipulate the DOM, handle events, and perform calculations using JavaScript. The progression from simple operations (text permutation) to complex applications (scientific calculator) provides a comprehensive learning path for mastering frontend web development concepts.
+---
+
+## 🎓 Learning Outcomes
+
+Working through these exercises will help you master:
+
+1. 🖱️ **Event Handling** - Responding to user interactions
+2. 🔄 **DOM Manipulation** - Dynamically updating page content
+3. 🧮 **JavaScript Calculations** - Implementing mathematical operations
+4. 🎨 **UI/UX Design** - Creating intuitive user interfaces
+5. 🐞 **Error Handling** - Gracefully managing edge cases
+
+## 🚀 Next Steps
+
+After completing these exercises, consider enhancing them with:
+
+- 📱 **Responsive Design** - Optimize for mobile devices
+- 🌈 **Advanced Styling** - Add animations and transitions
+- 💾 **Local Storage** - Save calculation history
+- 📊 **Data Visualization** - Add charts for the BMI calculator
+- 🔌 **API Integration** - Connect to external calculation services
+
+## 🔍 Conclusion
+
+These exercises provide a comprehensive foundation in JavaScript and web development. The progression from simple operations (text permutation) to complex applications (scientific calculator) offers a practical learning path for mastering frontend web development concepts. Each exercise builds upon skills learned in the previous ones, creating a holistic learning experience.
+
+Happy coding! 💻✨
