@@ -1,0 +1,141 @@
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice 2 - Calculatrice Simple</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .calculatrice {
+            background-color: #f0f0f0;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+        }
+        .buttons {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        button {
+            flex: 1;
+            padding: 10px 0;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #resultat {
+            background-color: #e9e9e9;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculatrice Simple</h1>
+    
+    <div class="calculatrice">
+        <div class="form-group">
+            <label for="nombre1">Nombre 1:</label>
+            <input type="number" id="nombre1">
+        </div>
+        
+        <div class="form-group">
+            <label for="nombre2">Nombre 2:</label>
+            <input type="number" id="nombre2">
+        </div>
+        
+        <div class="buttons">
+            <button id="addition">+</button>
+            <button id="soustraction">-</button>
+            <button id="multiplication">×</button>
+            <button id="division">÷</button>
+        </div>
+        
+        <div class="form-group">
+            <label for="resultat">Résultat:</label>
+            <input type="number" id="resultat" readonly>
+        </div>
+    </div>
+    
+    <script>
+        const nombre1 = document.getElementById('nombre1');
+        const nombre2 = document.getElementById('nombre2');
+        const resultat = document.getElementById('resultat');
+
+        const btnAddition = document.getElementById('addition');
+        const btnSoustraction = document.getElementById('soustraction');
+        const btnMultiplication = document.getElementById('multiplication');
+        const btnDivision = document.getElementById('division');
+        
+        function getValues() {
+            const val1 = parseFloat(nombre1.value);
+            const val2 = parseFloat(nombre2.value);
+            
+            if (isNaN(val1) || isNaN(val2)) {
+                alert("Veuillez entrer des nombres valides");
+                return null;
+            }
+            
+            return { val1, val2 };
+        }
+ 
+        btnAddition.addEventListener('click', function() {
+            const values = getValues();
+            if (values) {
+                resultat.value = values.val1 + values.val2;
+            }
+        });
+        
+        btnSoustraction.addEventListener('click', function() {
+            const values = getValues();
+            if (values) {
+                resultat.value = values.val1 - values.val2;
+            }
+        });
+        
+        btnMultiplication.addEventListener('click', function() {
+            const values = getValues();
+            if (values) {
+                resultat.value = values.val1 * values.val2;
+            }
+        });
+        
+        btnDivision.addEventListener('click', function() {
+            const values = getValues();
+            if (values) {
+                if (values.val2 === 0) {
+                    alert("Division par zéro impossible");
+                    return;
+                }
+                resultat.value = values.val1 / values.val2;
+            }
+        });
+    </script>
+</body>
+</html>
