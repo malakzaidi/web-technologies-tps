@@ -1,0 +1,64 @@
+{
+  "users": [
+    {
+      "id": "c821",
+      "name": "malak",
+      "email": "malak@gmail.com",
+      "password": "password"
+    },
+    {
+      "id": "c822",
+      "name": "amina",
+      "email": "amina@gmail.com",
+      "password": "password"
+    },
+    {
+      "id": "c823",
+      "name": "karim",
+      "email": "karim@gmail.com",
+      "password": "password"
+    },
+    {
+      "id": "c824",
+      "name": "sanaa",
+      "email": "sanaa@gmail.com",
+      "password": "password"
+    },
+    {
+      "id": "c825",
+      "name": "hassan",
+      "email": "hassan@gmail.com",
+      "password": "password"
+    },
+    {
+      "id": "c826",
+      "name": "fatima",
+      "email": "fatima@gmail.com",
+      "password": "password"
+    },
+    {
+      "id": "c827",
+      "name": "mohamed",
+      "email": "mohamed@gmail.com",
+      "password": "password"
+    },
+    {
+      "id": "c828",
+      "name": "nadia",
+      "email": "nadia@gmail.com",
+      "password": "password"
+    },
+    {
+      "id": "c829",
+      "name": "rachid",
+      "email": "rachid@gmail.com",
+      "password": "password"
+    },
+    {
+      "id": "c830",
+      "name": "leila",
+      "email": "leila@gmail.com",
+      "password": "password"
+    }
+  ]
+}
