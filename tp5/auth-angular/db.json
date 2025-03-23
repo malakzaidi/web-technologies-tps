@@ -65,18 +65,6 @@
       "name": "Nada",
       "email": "nada@gmail.com",
       "password": "nada"
-    },
-    {
-      "id": "c487",
-      "name": "Malak ",
-      "email": "malak@example.com",
-      "password": "123"
-    },
-    {
-      "id": "b0ea",
-      "name": "malak",
-      "email": "malak@gmail.com",
-      "password": "12"
     }
   ]
 }
