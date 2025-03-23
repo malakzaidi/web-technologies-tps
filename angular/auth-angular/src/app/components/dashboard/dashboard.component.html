@@ -1,0 +1,671 @@
+<style>
+  .sidenav-container {
+    height: 100vh;
+    background-color: #f8fafc;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  .sidenav {
+    width: 260px;
+    border-right: 1px solid #e2e8f0;
+    background: #ffffff;
+    color: #334155;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    transition: width 0.3s ease;
+  }
+
+  .logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #e2e8f0;
+  }
+
+  .logo {
+    max-height: 36px;
+    transition: transform 0.2s ease;
+  }
+  .mat-nav-list {
+    padding: 12px 0;
+  }
+
+  .mat-list-item {
+    margin: 4px 8px;
+    border-radius: 6px;
+    color: #64748b;
+    transition: all 0.2s ease;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+  }
+
+  .mat-list-item:hover {
+    background-color: #f1f5f9;
+    color: #0f172a;
+  }
+
+  .mat-list-item.active {
+    background-color: #f1f5f9;
+    color: #4f46e5;
+    font-weight: 500;
+    border-left: 3px solid #4f46e5;
+  }
+
+  .mat-icon {
+    margin-right: 12px;
+    color: #64748b;
+  }
+
+  .mat-list-item.active .mat-icon {
+    color: #4f46e5;
+  }
+
+  .nav-text {
+    font-size: 14px;
+    letter-spacing: 0.01em;
+  }
+  .mat-toolbar {
+    background: #ffffff;
+    color: #0f172a;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    height: 64px;
+    padding: 0 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e2e8f0;
+  }
+
+  .flex {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  button[mat-icon-button] {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 6px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    color: #64748b;
+    background: transparent;
+  }
+
+  button[mat-icon-button]:hover {
+    background: #f1f5f9;
+    color: #0f172a;
+  }
+
+  .logout {
+    background-color: #4f46e5;
+    color: white;
+    transition: all 0.2s ease;
+    border-radius: 6px;
+    padding: 0 16px;
+    height: 38px;
+    font-weight: 500;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+  }
+
+  .logout:hover {
+    background-color: #4338ca;
+    box-shadow: 0 2px 4px rgba(79, 70, 229, 0.2);
+  }
+
+  .content {
+    padding: 24px;
+    background-color: #f8fafc;
+    min-height: calc(100vh - 64px);
+  }
+  .dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+
+  .page-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #0f172a;
+    margin: 0;
+  }
+
+  .welcome-message {
+    font-size: 16px;
+    color: #64748b;
+    margin-top: 4px;
+  }
+  .progress-overview {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 24px;
+    margin-bottom: 24px;
+  }
+
+  .progress-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid #e2e8f0;
+  }
+
+  .progress-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  }
+
+  .progress-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 16px;
+  }
+
+  .progress-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #0f172a;
+    margin: 0;
+  }
+
+  .progress-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(79, 70, 229, 0.1);
+    color: #4f46e5;
+  }
+
+  .progress-bar-container {
+    height: 8px;
+    background: #e2e8f0;
+    border-radius: 4px;
+    margin-bottom: 12px;
+    overflow: hidden;
+  }
+
+  .progress-bar {
+    height: 100%;
+    border-radius: 4px;
+    background: #4f46e5;
+  }
+
+  .progress-stats {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+  }
+
+  .progress-percentage {
+    font-weight: 600;
+    color: #0f172a;
+  }
+
+  .progress-label {
+    color: #64748b;
+  }
+  .courses-section {
+    margin-bottom: 32px;
+  }
+
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+
+  .section-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #0f172a;
+    margin: 0;
+  }
+
+  .view-all {
+    font-size: 14px;
+    color: #4f46e5;
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .view-all:hover {
+    text-decoration: underline;
+  }
+
+  .courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 24px;
+  }
+
+  .course-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid #e2e8f0;
+  }
+
+  .course-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  }
+
+  .course-image {
+    height: 140px;
+    background: #f1f5f9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #64748b;
+    font-size: 14px;
+  }
+
+  .course-content {
+    padding: 16px;
+  }
+
+  .course-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #0f172a;
+    margin: 0 0 8px 0;
+  }
+
+  .course-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    color: #64748b;
+    margin-bottom: 12px;
+  }
+
+  .course-progress {
+    height: 4px;
+    background: #e2e8f0;
+    border-radius: 2px;
+    margin-bottom: 12px;
+    overflow: hidden;
+  }
+
+  .course-progress-bar {
+    height: 100%;
+    border-radius: 2px;
+  }
+
+  .progress-low {
+    background: #f59e0b;
+    width: 25%;
+  }
+
+  .progress-medium {
+    background: #3b82f6;
+    width: 50%;
+  }
+
+  .progress-high {
+    background: #10b981;
+    width: 75%;
+  }
+
+  .course-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .course-status {
+    font-size: 12px;
+    font-weight: 500;
+    padding: 4px 8px;
+    border-radius: 4px;
+  }
+
+  .status-in-progress {
+    background: rgba(59, 130, 246, 0.1);
+    color: #3b82f6;
+  }
+
+  .status-completed {
+    background: rgba(16, 185, 129, 0.1);
+    color: #10b981;
+  }
+
+  .status-not-started {
+    background: rgba(100, 116, 139, 0.1);
+    color: #64748b;
+  }
+
+  .course-button {
+    font-size: 13px;
+    color: #4f46e5;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    font-weight: 500;
+  }
+
+  .course-button:hover {
+    text-decoration: underline;
+  }
+  .calendar-section {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e2e8f0;
+    overflow: hidden;
+    margin-bottom: 24px;
+  }
+
+  .calendar-header {
+    padding: 16px 20px;
+    border-bottom: 1px solid #e2e8f0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .calendar-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #0f172a;
+    margin: 0;
+  }
+
+  .calendar-content {
+    padding: 20px;
+  }
+
+  .upcoming-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .upcoming-item {
+    display: flex;
+    align-items: flex-start;
+    padding: 12px 0;
+    border-bottom: 1px solid #e2e8f0;
+  }
+
+  .upcoming-item:last-child {
+    border-bottom: none;
+  }
+
+  .upcoming-date {
+    min-width: 60px;
+    text-align: center;
+    margin-right: 16px;
+  }
+
+  .date-day {
+    font-size: 20px;
+    font-weight: 600;
+    color: #0f172a;
+    line-height: 1;
+  }
+
+  .date-month {
+    font-size: 12px;
+    color: #64748b;
+    text-transform: uppercase;
+  }
+
+  .upcoming-details {
+    flex: 1;
+  }
+
+  .upcoming-title {
+    font-size: 15px;
+    font-weight: 500;
+    color: #0f172a;
+    margin: 0 0 4px 0;
+  }
+
+  .upcoming-course {
+    font-size: 13px;
+    color: #64748b;
+    margin: 0;
+  }
+
+  .upcoming-time {
+    font-size: 13px;
+    color: #64748b;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-top: 4px;
+  }
+
+  /* User Profile */
+  .user-profile {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+  }
+
+  .user-profile:hover {
+    background: #f1f5f9;
+  }
+
+  .avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #e2e8f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    color: #64748b;
+    font-size: 14px;
+  }
+
+  .user-info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .user-name {
+    font-size: 14px;
+    font-weight: 500;
+    color: #0f172a;
+  }
+
+  .user-role {
+    font-size: 12px;
+    color: #64748b;
+  }
+
+  /* Notification Badge */
+  .notification-badge {
+    position: relative;
+  }
+
+  .badge {
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #4f46e5;
+    color: white;
+    font-size: 11px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #ffffff;
+  }
+
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .sidenav {
+      width: 240px;
+    }
+
+    .content {
+      padding: 16px;
+    }
+
+    .progress-overview,
+    .courses-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav
+    [opened]="isSidenavOpen"
+    mode="side"
+    class="sidenav"
+  >
+    <div class="logo-container">
+      <img src="/app/assets/images/logo.png" alt="Logo" class="logo" />
+    </div>
+
+    <mat-nav-list>
+      <a mat-list-item routerLink="/dashboard" routerLinkActive="active">
+        <mat-icon>dashboard</mat-icon>
+        <span class="nav-text">Dashboard</span>
+      </a>
+      <a mat-list-item routerLink="/courses" routerLinkActive="active">
+        <mat-icon>school</mat-icon>
+        <span class="nav-text">My Courses</span>
+      </a>
+      <a mat-list-item routerLink="/calendar" routerLinkActive="active">
+        <mat-icon>calendar_today</mat-icon>
+        <span class="nav-text">Calendar</span>
+      </a>
+      <a mat-list-item routerLink="/assignments" routerLinkActive="active">
+        <mat-icon>assignment</mat-icon>
+        <span class="nav-text">Assignments</span>
+      </a>
+      <a mat-list-item routerLink="/resources" routerLinkActive="active">
+        <mat-icon>book</mat-icon>
+        <span class="nav-text">Resources</span>
+      </a>
+      <a mat-list-item routerLink="/grades" routerLinkActive="active">
+        <mat-icon>grade</mat-icon>
+        <span class="nav-text">Grades</span>
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <mat-toolbar>
+      <div class="flex">
+        <button mat-icon-button (click)="toggleSidenav()">
+          <mat-icon>menu</mat-icon>
+        </button>
+      </div>
+
+      <div class="flex">
+        <button mat-icon-button class="notification-badge">
+          <mat-icon>notifications</mat-icon>
+          <span class="badge">2</span>
+        </button>
+
+        <div class="user-profile">
+          <div class="user-info">
+            <span class="user-role">Student</span>
+          </div>
+        </div>
+
+        <button mat-raised-button class="logout" (click)="authService.logout()">
+          <mat-icon>logout</mat-icon>
+          <span>Logout</span>
+        </button>
+      </div>
+    </mat-toolbar>
+
+    <div class="content">
+      <div class="dashboard-header">
+        <div>
+          <h1 class="page-title">Learning Dashboard</h1>
+          <p class="welcome-message">Welcome back,Continue your learning journey.</p>
+        </div>
+      </div>
+
+      <div class="progress-overview">
+        <div class="progress-card">
+          <div class="progress-header">
+            <h3 class="progress-title">Overall Progress</h3>
+            <div class="progress-icon">
+              <mat-icon>trending_up</mat-icon>
+            </div>
+          </div>
+          <div class="progress-bar-container">
+            <div class="progress-bar" style="width: 68%;"></div>
+          </div>
+          <div class="progress-stats">
+            <div class="progress-percentage">68%</div>
+            <div class="progress-label">4 of 6 courses in progress</div>
+          </div>
+        </div>
+
+        <div class="progress-card">
+          <div class="progress-header">
+            <h3 class="progress-title">This Week's Activity</h3>
+            <div class="progress-icon">
+              <mat-icon>schedule</mat-icon>
+            </div>
+          </div>
+          <div class="progress-bar-container">
+            <div class="progress-bar" style="width: 85%;"></div>
+          </div>
+          <div class="progress-stats">
+            <div class="progress-percentage">8.5 hrs</div>
+            <div class="progress-label">Weekly goal: 10 hrs</div>
+          </div>
+        </div>
+
+        <div class="progress-card">
+          <div class="progress-header">
+            <h3 class="progress-title">Assignments</h3>
+            <div class="progress-icon">
+              <mat-icon>assignment_turned_in</mat-icon>
+            </div>
+          </div>
+          <div class="progress-bar-container">
+            <div class="progress-bar" style="width: 75%;"></div>
+          </div>
+          <div class="progress-stats">
+            <div class="progress-percentage">9/12</div>
+            <div class="progress-label">3 pending assignments</div>
+          </div>
+        </div>
+      </div>
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

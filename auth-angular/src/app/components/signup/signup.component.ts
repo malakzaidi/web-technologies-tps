@@ -1,32 +1,18 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
-import { first } from 'rxjs/operators';
-import { AuthService } from '../../services/auth.service';
+import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms'; // Add ReactiveFormsModule
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-signup',
+  standalone: true, // Mark the component as standalone
+  imports: [ReactiveFormsModule, CommonModule], // Import ReactiveFormsModule
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.css']
 })
-export class SignupComponent implements OnInit {
-  signupForm!: FormGroup;
-  loading = false;
-  submitted = false;
-  error = '';
+export class SignupComponent {
+  signupForm: FormGroup;
 
-  constructor(
-    private formBuilder: FormBuilder,
-    private router: Router,
-    private authService: AuthService
-  ) {
-    // Rediriger vers le tableau de bord si déjà connecté
-    if (this.authService.isAuthenticated()) {
-      this.router.navigate(['/dashboard']);
-    }
-  }
-
-  ngOnInit(): void {
+  constructor(private formBuilder: FormBuilder) {
     this.signupForm = this.formBuilder.group({
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
@@ -35,24 +21,9 @@ export class SignupComponent implements OnInit {
   }
 
   onSubmit(): void {
-    this.submitted = true;
-
-    // Arrêter si le formulaire est invalide
     if (this.signupForm.invalid) {
       return;
     }
-
-    this.loading = true;
-    this.authService.signup(this.signupForm.value)
-      .pipe(first())
-      .subscribe({
-        next: () => {
-          this.router.navigate(['/dashboard']);
-        },
-        error: error => {
-          this.error = error.message || 'Une erreur est survenue';
-          this.loading = false;
-        }
-      });
+    console.log('Form submitted', this.signupForm.value);
   }
 }

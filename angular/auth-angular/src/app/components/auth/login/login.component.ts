@@ -12,8 +12,6 @@ import {MatButton, MatIconButton} from '@angular/material/button';
   selector: 'app-login',
   imports: [
     MatCard,
-    MatCardHeader,
-    MatCardContent,
     ReactiveFormsModule,
     MatFormField,
     MatLabel,
@@ -58,5 +56,6 @@ export class LoginComponent implements OnInit{
       },
     });
   }
+
 
 }
