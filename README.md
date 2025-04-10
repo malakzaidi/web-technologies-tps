@@ -17,7 +17,7 @@ This repository contains hands-on exercises designed to explore fundamental **we
     - DOM Manipulation  
     - Event Handling  
     - Dynamic Styling  
-    - Form Validation  
+    - Form Validation 
 
 ## 📂 Repository Structure  
 
